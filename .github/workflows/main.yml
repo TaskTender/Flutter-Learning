@@ -30,13 +30,7 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter test
-      - run: |
-          cd ios
-          pod install
-          pod update
-        working-directory: ${{github.workspace}}
       - run: flutter build ios --release --no-codesign
-        working-directory: ${{github.workspace}}
 
   build-and-test-web:
     runs-on: ubuntu-latest
